@@ -12,7 +12,7 @@ let s:script_folder_path = expand( '<sfile>:p:h' )
 
 " Xcode quick open
 function! ROpenCurrentFileWithXcodeAppleScript()
-    let xcodequickopen_script = s:script_folder_path . '/../bin/xcodequickopen'
+    let xcodequickopen_script = 'osascript -l JavaScript ' . s:script_folder_path . '/../bin/xcodequickopen.js'
     let filename = expand('%:t')
     let line = line('.')
     let cmd = xcodequickopen_script . ' ' . filename . ':' . line
